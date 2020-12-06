@@ -131,3 +131,10 @@ $di->setShared(
         return new Request();
     }
 );
+
+$di->setShared(
+    "assets",
+    function () {
+        return new \Phalcon\Assets\Manager();
+    }
+);

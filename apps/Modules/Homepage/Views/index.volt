@@ -1,9 +1,21 @@
-{% extends '../../Common/Views/layout/default.volt' %}
+{% extends '../../Common/Views/layout/main.volt' %}
 
 {% block content %}
 
-<p>Hello world! This is HTML5 Boilerplate.</p>
-<script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-<script src="js/app.js"></script>
+<div class="starter-template">
+    <h1>Bootstrap starter template</h1>
+    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+  </div>
+{% endblock %}
 
+
+{% block moduleCss %}
+<link href="/assets/css/homepage.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block menunav %}
+<li class="nav-item active">
+    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+</li>
 {% endblock %}

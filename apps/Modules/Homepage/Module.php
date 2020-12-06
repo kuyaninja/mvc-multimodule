@@ -58,10 +58,13 @@ class Module implements ModuleDefinitionInterface
             return $view;
         };
 
-        $di["assets"] = function () {
-            return require __DIR__ . '/Config/assets.php';
-        };
-
+        $this->di['assets']
+            ->useImplicitOutput(false)
+            ->collection('homepage')
+            ->addCss(__DIR__ . '/Assets/Css/starter-template.css', true, true)
+            ->setTargetPath('/assets/css/homepage.css')
+            ->setTargetUri('/assets/css/homepage.css')
+        ;
     }
 
     public function registerAutoloaders(\Phalcon\Di\DiInterface $container = null)
